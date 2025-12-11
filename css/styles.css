@@ -1,0 +1,39 @@
+/* Base styles */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+/* Container */
+.wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px;
+  background: #111827;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: #f9fafb;
+}
+
+/* Navigation (later) */
+nav {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+nav a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
