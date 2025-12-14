@@ -12,15 +12,11 @@ The goal of the project is to simulate a real digital product landing page, focu
 
 The landing page represents a local reputation and SEO platform for businesses.
 
----
-
 ## Live Demo
 🔗 https://irina-kovalenko.github.io/
 
 Pitch presentation:  
 🔗 https://irina-kovalenko.github.io/pitch/
-
----
 
 ## Technologies Used
 - HTML (semantic structure)
@@ -29,8 +25,6 @@ Pitch presentation:
 - GitHub Pages (deployment)
 
 No external frameworks or libraries were used.
-
----
 
 ## Key Features
 - Semantic HTML structure (`header`, `main`, `section`, `footer`)
@@ -41,8 +35,6 @@ No external frameworks or libraries were used.
 - Client-side form validation
 - Cookie consent logic with persistent user choice
 - Fully responsive design for desktop, tablet, and mobile
-
----
 
 ## Project Structure
 /
