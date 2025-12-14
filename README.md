@@ -36,20 +36,6 @@ No external frameworks or libraries were used.
 - Cookie consent logic with persistent user choice
 - Fully responsive design for desktop, tablet, and mobile
 
-## Project Structure
-/
-├── index.html          # Main landing page
-├── css/
-│   └── styles.css      # Global styles and responsive layout
-├── js/
-│   └── script.js       # Interactive behavior and UI logic
-├── img/
-│   └── (project images)
-└── pitch/
-    ├── index.html      # HTML pitch presentation
-    └── css/
-        └── pitch.css  # Presentation styles
-
 ## Academic Information
 Student: Irina Kovalenko  
 Matricola: 69098A  
