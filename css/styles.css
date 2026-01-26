@@ -104,8 +104,8 @@ p{ margin:0; color:var(--muted); }
   height:120px;
   object-fit:contain;
   border:1px solid var(--line);
-  border-radius:21px;
-  padding:17x;
+  border-radius:24px;
+  padding:18x;
   background:rgba(15,23,42,.03);
 }
 
