@@ -4,310 +4,325 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Project Pitch — Revvy Landing Page</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="css/pitch.css?v=7">
+  <link rel="stylesheet" href="css/pitch.css" />
+  <script defer src="js/pitch.js"></script>
 </head>
 
 <body>
-  <main class="deck">
+  <main class="deck" id="deck">
 
-    <!-- SLIDE 1 — Cover (NO IMAGE) -->
-    <section class="slide slide--cover" id="s1">
-      <div class="cover">
+    <!-- SLIDE 1 (no image) -->
+    <section class="slide cover" id="s1" data-title="Cover">
+      <div class="cover-box">
         <div class="badge">Project Pitch</div>
+
         <h1>Revvy — Local Reputation &amp; SEO Platform</h1>
         <p class="subtitle">Responsive Landing Page · HTML · CSS · JavaScript</p>
 
         <div class="meta">
-          <div><span>Student</span> Irina Kovalenko</div>
-          <div><span>Matricola</span> 69098A</div>
-          <div><span>Degree Programme</span> Comunicazione pubblica e d'impresa (per richiedenti visto)</div>
-          <div><span>Code / Class</span> B6Y — LM-59</div>
-          <div><span>Academic Year</span> 2025 / 2026</div>
+          <p><strong>Student</strong> Irina Kovalenko</p>
+          <p><strong>Matricola</strong> 69098A</p>
+          <p><strong>Degree Programme</strong> Comunicazione pubblica e d'impresa (per richiedenti visto)</p>
+          <p><strong>Code / Class</strong> B6Y — LM-59</p>
+          <p><strong>Academic Year</strong> 2025 / 2026</p>
         </div>
+
+        <p class="hint">Use ← → keys (or scroll)</p>
       </div>
     </section>
 
     <!-- SLIDE 2 -->
-    <section class="slide" id="s2">
-      <div class="left">
-        <h2>Project Goal</h2>
-        <p>
-          The goal of this project was to design and implement a responsive landing page using HTML, CSS and JavaScript,
-          following modern UI/UX and accessibility principles.
-        </p>
-        <p>
-          The landing page simulates a real digital product and focuses on clear communication, usability, and lead generation.
-        </p>
+    <section class="slide" id="s2" data-title="Project Goal">
+      <div class="grid">
+        <figure class="left">
+          <div class="imgbox">
+            <img src="ссылка" alt="Project goal visual" />
+          </div>
+          <figcaption>Project overview and goal</figcaption>
+        </figure>
+
+        <div class="right">
+          <h2>Project Goal</h2>
+          <p>
+            The goal of this project was to design and implement a responsive landing page using
+            HTML, CSS and JavaScript, following modern UI/UX and accessibility principles.
+          </p>
+          <p>
+            The landing page simulates a real digital product and focuses on clear communication,
+            usability, and lead generation through online reputation management.
+          </p>
+        </div>
       </div>
-      <figure class="right">
-        <img src="img/2slide.png" alt="Hero section with primary call-to-action buttons">
-        <figcaption>Hero section with primary call-to-action buttons</figcaption>
-      </figure>
     </section>
 
     <!-- SLIDE 3 -->
-    <section class="slide" id="s3">
-      <div class="left">
-        <h2>Why Local Reputation &amp; SEO</h2>
-        <p>Local businesses strongly depend on:</p>
-        <ul>
-          <li>online reviews</li>
-          <li>visibility on maps and platforms</li>
-          <li>customer feedback</li>
-        </ul>
-        <p>
-          A strong online reputation helps businesses attract new customers, build trust, and increase revenue.
-          This project shows how a landing page can communicate these benefits clearly and support business growth.
-        </p>
+    <section class="slide" id="s3" data-title="Why Local Reputation & SEO">
+      <div class="grid">
+        <figure class="left">
+          <div class="imgbox">
+            <img src="ссылка" alt="Reputation concept visual" />
+          </div>
+          <figcaption>Why reviews and visibility matter</figcaption>
+        </figure>
+
+        <div class="right">
+          <h2>Why Local Reputation &amp; SEO</h2>
+          <p>Local businesses strongly depend on:</p>
+          <ul>
+            <li>online reviews</li>
+            <li>visibility on maps and platforms</li>
+            <li>customer feedback</li>
+          </ul>
+          <p>
+            A strong online reputation helps businesses attract new customers, build trust, and increase revenue.
+            This landing page communicates these benefits clearly and supports business growth.
+          </p>
+        </div>
       </div>
-      <figure class="right">
-        <img src="img/3slide.png" alt="Main visual with map and reviews illustration">
-        <figcaption>Main visual with map and reviews illustration</figcaption>
-      </figure>
     </section>
 
-    <!-- SLIDE 4 (Technology Stack + Code Organization merged) -->
-    <section class="slide" id="s4">
-      <div class="left">
-        <h2>Technology Stack &amp; Code Organization</h2>
-        <p>This project was developed using standard web technologies commonly adopted for modern static websites.</p>
-        <p><strong>Technologies used:</strong></p>
-        <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>GitHub Pages (deployment)</li>
-        </ul>
-        <p>The project does not rely on external frameworks or libraries.</p>
-        <p><strong>Organization:</strong> HTML for structure, CSS for styling, JavaScript for behavior — improving maintainability and readability.</p>
+    <!-- SLIDE 4 -->
+    <section class="slide" id="s4" data-title="Tech Stack & Organization">
+      <div class="grid">
+        <figure class="left">
+          <div class="imgbox">
+            <img src="ссылка" alt="Tech stack visual" />
+          </div>
+          <figcaption>Technology stack and structure</figcaption>
+        </figure>
+
+        <div class="right">
+          <h2>Technology Stack &amp; Code Organization</h2>
+          <p>
+            This project was developed using standard web technologies commonly adopted for modern static websites.
+          </p>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>GitHub Pages</li>
+          </ul>
+          <p>
+            Organization: HTML for structure, CSS for styling, JavaScript for behavior — improving maintainability and readability.
+          </p>
+        </div>
       </div>
-      <figure class="right">
-        <img src="img/4slide.png" alt="Repository structure on GitHub and code separation into files">
-        <figcaption>Repository structure &amp; separate files (index.html, css/, js/, img/)</figcaption>
-      </figure>
     </section>
 
     <!-- SLIDE 5 -->
-    <section class="slide" id="s5">
-      <div class="left">
-        <h2>Semantic HTML Structure</h2>
-        <p>
-          The page is structured using semantic HTML elements to improve accessibility, readability, and SEO.
-          Elements such as <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code>
-          define the logical structure of the page.
-        </p>
+    <section class="slide" id="s5" data-title="Semantic HTML">
+      <div class="grid">
+        <figure class="left">
+          <div class="imgbox">
+            <img src="ссылка" alt="Semantic HTML visual" />
+          </div>
+          <figcaption>Semantic structure improves clarity</figcaption>
+        </figure>
+
+        <div class="right">
+          <h2>Semantic HTML Structure</h2>
+          <p>
+            The website uses semantic HTML to improve accessibility, readability, and content hierarchy.
+            Clear elements define the role of each page section.
+          </p>
+
+          <div class="code">
+<pre><code>&lt;header&gt;...&lt;/header&gt;
+&lt;nav&gt;...&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id="features"&gt;...&lt;/section&gt;
+  &lt;section id="cta"&gt;...&lt;/section&gt;
+&lt;/main&gt;</code></pre>
+          </div>
+
+          <p class="small">
+            This structure helps both users and assistive technologies understand the page.
+          </p>
+        </div>
       </div>
-      <figure class="right">
-        <img src="img/5slide.png" alt="Code snippet from index.html showing semantic structure">
-        <figcaption>Semantic structure in index.html</figcaption>
-      </figure>
     </section>
 
     <!-- SLIDE 6 -->
-    <section class="slide" id="s6">
-      <div class="left">
-        <h2>Responsive Layout</h2>
-        <p>The layout adapts to different screen sizes using:</p>
-        <ul>
-          <li>CSS Grid</li>
-          <li>Flexbox</li>
-          <li>media queries</li>
-        </ul>
-        <p>Navigation and content are optimized for desktop, tablet, and mobile devices.</p>
+    <section class="slide" id="s6" data-title="Responsive Layout">
+      <div class="grid">
+        <figure class="left">
+          <div class="imgbox">
+            <img src="ссылка" alt="Responsive layout screenshot" />
+          </div>
+          <figcaption>Layout adapts to mobile and desktop</figcaption>
+        </figure>
+
+        <div class="right">
+          <h2>Responsive Layout</h2>
+          <p>The layout adapts to different screen sizes using:</p>
+          <ul>
+            <li>CSS Grid</li>
+            <li>Flexbox</li>
+            <li>media queries</li>
+          </ul>
+          <p>
+            Navigation and content are optimized for desktop, tablet, and mobile devices.
+          </p>
+        </div>
       </div>
-      <figure class="right">
-        <img src="img/6slide.png" alt="Desktop and mobile views in responsive mode">
-        <figcaption>Desktop &amp; mobile views</figcaption>
-      </figure>
     </section>
 
     <!-- SLIDE 7 -->
-    <section class="slide" id="s7">
-      <div class="left">
-        <h2>Navigation &amp; Dropdown Logic</h2>
-        <p>The navigation includes:</p>
-        <ul>
-          <li>a desktop dropdown menu for “Solutions”</li>
-          <li>a mobile burger menu</li>
-          <li>keyboard and click interactions</li>
-        </ul>
-        <p>All interactions are handled using JavaScript.</p>
+    <section class="slide" id="s7" data-title="Navigation & Anchors">
+      <div class="grid">
+        <figure class="left">
+          <div class="imgbox">
+            <img src="ссылка" alt="Navigation screenshot" />
+          </div>
+          <figcaption>Anchor navigation</figcaption>
+        </figure>
+
+        <div class="right">
+          <h2>Navigation &amp; Anchor Links</h2>
+          <p>
+            The main navigation uses anchor links to move between sections without reloading the page.
+            It improves usability and helps users find key blocks quickly.
+          </p>
+
+          <div class="code">
+<pre><code>&lt;a href="#features"&gt;Features&lt;/a&gt;
+&lt;a href="#cta"&gt;Contact&lt;/a&gt;</code></pre>
+          </div>
+        </div>
       </div>
-      <figure class="right">
-        <img src="img/7slide.png" alt="Opened Solutions dropdown and navigation JavaScript code">
-        <figcaption>Dropdown + navigation logic</figcaption>
-      </figure>
     </section>
 
     <!-- SLIDE 8 -->
-    <section class="slide" id="s8">
-      <div class="left">
-        <h2>Call to Action Design</h2>
-        <p>Primary and secondary call-to-action buttons guide the user toward conversion:</p>
-        <ul>
-          <li>“Book a meeting”</li>
-          <li>“Watch a demo”</li>
-        </ul>
-        <p>The design emphasizes clarity and hierarchy.</p>
+    <section class="slide" id="s8" data-title="CTA Buttons">
+      <div class="grid">
+        <figure class="left">
+          <div class="imgbox">
+            <img src="ссылка" alt="CTA buttons screenshot" />
+          </div>
+          <figcaption>Primary and secondary actions</figcaption>
+        </figure>
+
+        <div class="right">
+          <h2>Call-to-Action Buttons</h2>
+          <p>
+            Call-to-action buttons guide the user to the main actions: contacting the business and watching a demo.
+            They support clear user flow and lead generation.
+          </p>
+
+          <div class="code">
+<pre><code>&lt;a class="btn primary" href="#cta"&gt;Get in touch&lt;/a&gt;
+&lt;button class="btn ghost" id="watchDemoBtn"&gt;Watch demo&lt;/button&gt;</code></pre>
+          </div>
+        </div>
       </div>
-      <figure class="right">
-        <img src="img/8slide.png" alt="CTA buttons with hover states">
-        <figcaption>CTA buttons + hover states</figcaption>
-      </figure>
     </section>
 
     <!-- SLIDE 9 -->
-    <section class="slide" id="s9">
-      <div class="left">
-        <h2>Modal Video Interaction</h2>
-        <p>Clicking “Watch a demo” opens a modal window implemented using:</p>
-        <ul>
-          <li>the <code>&lt;dialog&gt;</code> element</li>
-          <li>JavaScript event listeners</li>
-          <li>accessible close controls</li>
-        </ul>
-        <p>The video is embedded directly into the page.</p>
+    <section class="slide" id="s9" data-title="Form & Validation">
+      <div class="grid">
+        <figure class="left">
+          <div class="imgbox">
+            <img src="ссылка" alt="Contact form screenshot" />
+          </div>
+          <figcaption>Lead form with basic validation</figcaption>
+        </figure>
+
+        <div class="right">
+          <h2>Contact Form &amp; Validation</h2>
+          <p>
+            The form collects user details and provides immediate feedback.
+            JavaScript checks inputs and prevents empty or incorrect submissions.
+          </p>
+
+          <div class="code">
+<pre><code>form.addEventListener("submit", (e) =&gt; {
+  e.preventDefault();
+  // validate name + email
+});</code></pre>
+          </div>
+        </div>
       </div>
-      <figure class="right">
-        <img src="img/9slide.png" alt="Open modal with video and related JavaScript code">
-        <figcaption>Dialog modal + JS listeners</figcaption>
-      </figure>
     </section>
 
     <!-- SLIDE 10 -->
-    <section class="slide" id="s10">
-      <div class="left">
-        <h2>Feature Cards</h2>
-        <p>The feature section presents the main product benefits:</p>
-        <ul>
-          <li>growing local ratings</li>
-          <li>improving client retention</li>
-        </ul>
-        <p>Each card combines text and visuals for clear communication.</p>
+    <section class="slide" id="s10" data-title="Cookie Consent">
+      <div class="grid">
+        <figure class="left">
+          <div class="imgbox">
+            <img src="ссылка" alt="Cookie banner screenshot" />
+          </div>
+          <figcaption>Cookie consent saved in localStorage</figcaption>
+        </figure>
+
+        <div class="right">
+          <h2>Cookie Consent</h2>
+          <p>
+            A cookie banner is implemented with a simple logic: once the user chooses Accept or Decline,
+            the choice is saved and the banner does not appear again.
+          </p>
+
+          <div class="code">
+<pre><code>localStorage.setItem("cookie_consent", "accepted");
+cookie.hidden = true;</code></pre>
+          </div>
+        </div>
       </div>
-      <figure class="right">
-        <img src="img/10slide.png" alt="Feature cards section">
-        <figcaption>Feature cards section</figcaption>
-      </figure>
     </section>
 
     <!-- SLIDE 11 -->
-    <section class="slide" id="s11">
-      <div class="left">
-        <h2>Interactive Steps Section</h2>
-        <p>The “How We Grow Your Business” section includes interactive steps:</p>
-        <ul>
-          <li>Step 1: Rating &amp; visibility</li>
-          <li>Step 2: Feedback recovery</li>
-          <li>Step 3: Return customers</li>
-        </ul>
-        <p>Clicking each step dynamically updates the content.</p>
-      </div>
-      <figure class="right">
-        <img src="img/11slide.png" alt="Steps section with active state and JavaScript logic">
-        <figcaption>Interactive steps + JS</figcaption>
-      </figure>
-    </section>
+    <section class="slide" id="s11" data-title="Modal Video Demo">
+      <div class="grid">
+        <figure class="left">
+          <div class="imgbox">
+            <img src="ссылка" alt="Modal screenshot" />
+          </div>
+          <figcaption>Modal keeps users on the page</figcaption>
+        </figure>
 
-    <!-- SLIDE 12 -->
-    <section class="slide" id="s12">
-      <div class="left">
-        <h2>Analytics Section</h2>
-        <p>This section visually represents how analytics and performance data can be presented to users in a clear and readable way.</p>
-      </div>
-      <figure class="right">
-        <img src="img/12slide.png" alt="Analytics section with dashboard illustration">
-        <figcaption>Analytics section</figcaption>
-      </figure>
-    </section>
+        <div class="right">
+          <h2>Modal Window (Video Demo)</h2>
+          <p>
+            A modal window displays a short demo video without leaving the page.
+            JavaScript controls opening and closing for a smooth user experience.
+          </p>
 
-    <!-- SLIDE 13 -->
-    <section class="slide" id="s13">
-      <div class="left">
-        <h2>Solutions by Industry</h2>
-        <p>The landing page includes solutions tailored for different industries:</p>
-        <ul>
-          <li>Restaurants</li>
-          <li>Clinics</li>
-          <li>Beauty</li>
-          <li>Hotels</li>
-          <li>Education</li>
-          <li>Retail</li>
-        </ul>
-        <p>This structure improves relevance for diverse users.</p>
-      </div>
-      <figure class="right">
-        <img src="img/13slide.png" alt="Solutions grid">
-        <figcaption>Solutions grid</figcaption>
-      </figure>
-    </section>
-
-    <!-- SLIDE 14 -->
-    <section class="slide" id="s14">
-      <div class="left">
-        <h2>Lead Generation Form</h2>
-        <p>The contact form includes:</p>
-        <ul>
-          <li>required fields</li>
-          <li>client-side validation</li>
-          <li>accessible labels</li>
-        </ul>
-        <p>It simulates real lead collection logic used in digital products.</p>
-      </div>
-      <figure class="right">
-        <img src="img/14slide.png" alt="Form UI and validation JavaScript code">
-        <figcaption>Form UI + validation logic</figcaption>
-      </figure>
-    </section>
-
-    <!-- SLIDE 15 -->
-    <section class="slide" id="s15">
-      <div class="left">
-        <h2>Cookie Consent Logic</h2>
-        <p>The cookie banner demonstrates:</p>
-        <ul>
-          <li>user choice handling</li>
-          <li>persistent state using browser storage</li>
-          <li>privacy-aware interaction</li>
-        </ul>
-        <p>The banner is hidden after user action.</p>
-      </div>
-      <figure class="right">
-        <img src="img/15slide.png" alt="Cookie banner and localStorage logic in JavaScript">
-        <figcaption>Cookie banner + stored preference</figcaption>
-      </figure>
-    </section>
-
-    <!-- SLIDE 16 — Deployment (NO IMAGE) -->
-    <section class="slide slide--text" id="s16">
-      <div class="left wide">
-        <h2>Deployment</h2>
-        <p>
-          The project is deployed using GitHub Pages, making it accessible as a live website.
-          This approach reflects a real-world frontend workflow.
-        </p>
+          <div class="code">
+<pre><code>watchBtn.addEventListener("click", () =&gt; modal.showModal());
+closeBtn.addEventListener("click", () =&gt; modal.close());</code></pre>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- SLIDE 17 — Conclusion (NO IMAGE) -->
-    <section class="slide slide--text" id="s17">
-      <div class="left wide">
-        <h2>Conclusion</h2>
-        <p>This project demonstrates the ability to:</p>
-        <ul>
-          <li>design a modern user interface</li>
-          <li>write semantic HTML</li>
-          <li>implement interactive features with JavaScript</li>
-          <li>deploy a complete web project</li>
-        </ul>
+    <!-- SLIDE 12 (no image) -->
+    <section class="slide end" id="s12" data-title="JavaScript Overview">
+      <div class="grid">
+        <div class="right wide">
+          <h2>JavaScript Overview</h2>
+          <p>
+            JavaScript is used to add interactivity without external libraries:
+          </p>
+          <ul>
+            <li>mobile menu toggle</li>
+            <li>anchor-based navigation support</li>
+            <li>form validation and user feedback</li>
+            <li>cookie consent logic (localStorage)</li>
+            <li>modal window for the demo video</li>
+          </ul>
+
+          <p class="small">
+            This keeps the code simple, readable, and easy to explain line by line.
+          </p>
+        </div>
       </div>
     </section>
 
   </main>
+
+  <div class="ui">
+    <button class="navbtn" type="button" data-prev aria-label="Previous slide">←</button>
+    <div class="counter" aria-live="polite"><span id="cur">1</span>/<span id="total">12</span></div>
+    <button class="navbtn" type="button" data-next aria-label="Next slide">→</button>
+  </div>
 </body>
 </html>
