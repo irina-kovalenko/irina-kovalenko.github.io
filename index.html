@@ -11,9 +11,7 @@
 <body id="top">
   <header class="topbar">
     <div class="container topbar__inner">
-      <a class="brand" href="#top" aria-label="Homepage">
-        <img class="brand__logo" src="img/logorevvy.png" alt="Logo" />
-      </a>
+      <a class="brand" href="#top" aria-label="Homepage">Local Reviews</a>
 
       <nav class="nav" aria-label="Primary navigation">
         <a href="#features">Features</a>
@@ -41,18 +39,18 @@
           <h1>Turn reviews into trust and more customers</h1>
 
           <p class="lead">
-            For local businesses, online rating is often the first impression.
-            This project shows a simple service that helps collect honest feedback,
-            reply faster, and improve reputation across map platforms.
+            Online rating is often the first impression for a local business.
+            This project presents a simple service idea: collect honest feedback, reply faster,
+            and improve visibility on map platforms.
           </p>
 
           <ul class="bullets">
-            <li>Increase rating with more positive reviews</li>
-            <li>Handle negative feedback faster</li>
-            <li>Improve visibility in local search</li>
+            <li>More reviews → stronger trust</li>
+            <li>Faster replies to negative feedback</li>
+            <li>Better local visibility</li>
           </ul>
 
-          <div class="hero__actions">
+          <div class="actions">
             <a class="btn btn--primary" href="#cta">Get in touch</a>
             <button class="btn btn--ghost" type="button" id="watchDemoBtn" aria-haspopup="dialog">
               Watch a demo
@@ -60,7 +58,7 @@
           </div>
         </div>
 
-        <div class="hero__media" aria-label="Preview image">
+        <div class="panel">
           <img src="img/main.map.w.rewies.png" alt="Map preview with reviews" />
         </div>
       </div>
@@ -69,33 +67,25 @@
     <section class="section" id="features">
       <div class="container">
         <h2>Features</h2>
-        <p class="lead">
-          The page focuses on three core actions: collecting reviews, replying to feedback, and tracking progress.
-        </p>
+        <p class="lead">Three simple blocks: collect, reply, track.</p>
 
         <div class="grid">
           <article class="card">
-            <div class="card__media">
-              <img src="img/Growth.png" alt="Growth" />
-            </div>
+            <img class="card__img" src="img/Growth.png" alt="Growth" />
             <h3>Collect reviews</h3>
-            <p>Make it easy for customers to leave feedback after a visit or order.</p>
+            <p>Make it easy for customers to leave feedback.</p>
           </article>
 
           <article class="card">
-            <div class="card__media">
-              <img src="img/Retentions.png" alt="Retention" />
-            </div>
+            <img class="card__img" src="img/Retentions.png" alt="Retention" />
             <h3>Reply faster</h3>
-            <p>Respond to negative reviews quickly and show that you care about service quality.</p>
+            <p>React to negative reviews and solve issues.</p>
           </article>
 
           <article class="card">
-            <div class="card__media">
-              <img src="img/Analytics.png" alt="Analytics" />
-            </div>
+            <img class="card__img" src="img/Analytics.png" alt="Analytics" />
             <h3>Track progress</h3>
-            <p>See rating dynamics and understand what changes improve customer satisfaction.</p>
+            <p>See rating changes over time.</p>
           </article>
         </div>
       </div>
@@ -103,22 +93,23 @@
 
     <section class="section" id="how">
       <div class="container how">
-        <div>
+        <div class="how__copy">
           <h2>How it works</h2>
           <p class="lead">
-            A simple flow: ask → collect → respond → improve.
-            No complex steps — just a clear process that supports daily operations.
+            A clear flow: ask → collect → respond → improve.
+            This section explains the concept in simple steps.
           </p>
+
           <ol class="steps">
-            <li>Send a request for feedback to customers</li>
-            <li>Collect reviews and monitor new messages</li>
-            <li>Reply and solve issues quickly</li>
-            <li>Use analytics to improve service and reputation</li>
+            <li>Send a feedback request</li>
+            <li>Monitor new reviews</li>
+            <li>Reply and fix problems</li>
+            <li>Improve rating and visibility</li>
           </ol>
         </div>
 
-        <div class="how__media" aria-label="Conversation example">
-          <img src="img/conversation.png" alt="Conversation example on a phone" />
+        <div class="panel">
+          <img src="img/conversation.png" alt="Conversation example" />
         </div>
       </div>
     </section>
@@ -129,17 +120,17 @@
           <h2>Contact us</h2>
           <p class="lead">
             Leave your details — we will contact you soon.
-            This form includes simple client-side validation.
+            The form includes simple client-side validation.
           </p>
         </div>
 
         <form class="form" id="leadForm" novalidate>
-          <label>
+          <label class="field">
             <span>Name</span>
             <input name="name" type="text" placeholder="Your name" required minlength="2" />
           </label>
 
-          <label>
+          <label class="field">
             <span>Email</span>
             <input name="email" type="email" placeholder="name@email.com" required />
           </label>
