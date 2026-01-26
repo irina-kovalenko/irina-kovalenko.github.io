@@ -1,116 +1,27 @@
-console.log("JS CONNECTED");
-// ===== Helpers =====
-const $ = (sel, root = document) => root.querySelector(sel);
-const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
-
-/* ===== Footer year ===== */
-const yearEl = $("#year");
-if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-
-/* ===== Mobile menu ===== */
-const burger = $(".burger");
-const mobileMenu = $(".mobile-menu");
+// ===== Mobile menu =====
+const burger = document.querySelector(".burger");
+const mobileMenu = document.querySelector(".mobile-menu");
 
 if (burger && mobileMenu) {
   burger.addEventListener("click", () => {
-    const open = burger.getAttribute("aria-expanded") === "true";
-    burger.setAttribute("aria-expanded", String(!open));
-    mobileMenu.hidden = open;
+    const isOpen = burger.getAttribute("aria-expanded") === "true";
+    burger.setAttribute("aria-expanded", String(!isOpen));
+    mobileMenu.hidden = isOpen;
   });
 
-  $$(".mobile-menu a").forEach((a) =>
-    a.addEventListener("click", () => {
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
       burger.setAttribute("aria-expanded", "false");
       mobileMenu.hidden = true;
-    })
-  );
-}
-
-/* ===== Desktop dropdown (Solutions) ===== */
-const dd = document.querySelector("[data-dd]");
-if (dd) {
-  const btn = dd.querySelector(".nav-dd__btn");
-  const menu = dd.querySelector(".nav-dd__menu");
-
-  if (btn && menu) {
-    const close = () => {
-      btn.setAttribute("aria-expanded", "false");
-      menu.hidden = true;
-    };
-    const open = () => {
-      btn.setAttribute("aria-expanded", "true");
-      menu.hidden = false;
-    };
-
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      expanded ? close() : open();
-    });
-
-    menu.addEventListener("click", (e) => {
-      const a = e.target.closest("a");
-      if (!a) return;
-      close();
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!dd.contains(e.target)) close();
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") close();
-    });
-  }
-}
-
-/* ===== How section steps ===== */
-const pills = $$(".pill");
-const badge = $("#howBadge");
-
-const stepText = {
-  1: "Improve rating visibility",
-  2: "Catch negative feedback early",
-  3: "Bring customers back with reminders",
-};
-
-if (pills.length && badge) {
-  pills.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      pills.forEach((x) => x.classList.remove("is-active"));
-      btn.classList.add("is-active");
-
-      const step = btn.dataset.step || "1";
-      const text = stepText[step] || stepText[1];
-      badge.innerHTML = `<strong>Step ${step}:</strong> ${text}`;
     });
   });
 }
 
-/* ===== Cookie consent (localStorage) ===== */
-const cookie = $("#cookie");
-const KEY = "demo_cookie_consent";
+// ===== Form validation =====
+const form = document.getElementById("leadForm");
+const hint = document.getElementById("formHint");
 
-if (cookie) {
-  const saved = localStorage.getItem(KEY);
-  if (saved) cookie.hidden = true;
-
-  $("#cookieAccept")?.addEventListener("click", () => {
-    localStorage.setItem(KEY, "accepted");
-    cookie.hidden = true;
-  });
-
-  $("#cookieDecline")?.addEventListener("click", () => {
-    localStorage.setItem(KEY, "declined");
-    cookie.hidden = true;
-  });
-}
-
-/* ===== Form validation (client side) ===== */
-const form = $("#leadForm");
-const hint = $("#formHint");
-
-function setHint(text, ok = true) {
+function setHint(text, ok) {
   if (!hint) return;
   hint.textContent = text;
   hint.style.color = ok ? "rgba(15,23,42,.75)" : "#b42318";
@@ -120,26 +31,40 @@ if (form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const data = new FormData(form);
-    const name = String(data.get("name") || "").trim();
-    const email = String(data.get("email") || "").trim();
-    const type = String(data.get("type") || "").trim();
-    const privacy = data.get("privacy") === "on";
+    const name = form.elements.name.value.trim();
+    const email = form.elements.email.value.trim();
 
     if (name.length < 2) return setHint("Please enter your name.", false);
     if (!email.includes("@") || !email.includes(".")) return setHint("Please enter a valid email.", false);
-    if (!type) return setHint("Please select a business type.", false);
-    if (!privacy) return setHint("Please accept the privacy policy checkbox.", false);
 
-    setHint("Thanks! Your request has been sent (demo). ✅", true);
+    setHint("Thanks! We will contact you soon. ✅", true);
     form.reset();
   });
 }
 
-/* ===== Demo modal ===== */
-const modal = $("#demoModal");
-const watchBtn = $("#watchDemoBtn");
-const closeBtn = $("[data-close]");
+// ===== Cookie consent (localStorage) =====
+const cookie = document.getElementById("cookie");
+const KEY = "cookie_consent_exam";
+
+if (cookie) {
+  const saved = localStorage.getItem(KEY);
+  if (saved) cookie.hidden = true;
+
+  document.getElementById("cookieAccept")?.addEventListener("click", () => {
+    localStorage.setItem(KEY, "accepted");
+    cookie.hidden = true;
+  });
+
+  document.getElementById("cookieDecline")?.addEventListener("click", () => {
+    localStorage.setItem(KEY, "declined");
+    cookie.hidden = true;
+  });
+}
+
+// ===== Video modal =====
+const modal = document.getElementById("demoModal");
+const watchBtn = document.getElementById("watchDemoBtn");
+const closeBtn = document.getElementById("closeModalBtn");
 
 if (watchBtn && modal) {
   watchBtn.addEventListener("click", () => {
@@ -154,21 +79,16 @@ if (closeBtn && modal) {
 if (modal) {
   modal.addEventListener("click", (e) => {
     const rect = modal.getBoundingClientRect();
-    const inDialog =
+    const inside =
       rect.top <= e.clientY &&
       e.clientY <= rect.top + rect.height &&
       rect.left <= e.clientX &&
       e.clientX <= rect.left + rect.width;
 
-    if (!inDialog) modal.close();
+    if (!inside) modal.close();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") modal.close();
   });
 }
-
-/* ===== Close mobile menu on desktop resize ===== */
-window.addEventListener("resize", () => {
-  if (!burger || !mobileMenu) return;
-  if (window.innerWidth > 760) {
-    burger.setAttribute("aria-expanded", "false");
-    mobileMenu.hidden = true;
-  }
-});
