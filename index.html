@@ -17,6 +17,7 @@
 
       <nav class="nav" aria-label="Primary navigation">
         <a href="#features">Features</a>
+        <a href="#how">How it works</a>
         <a href="#cta">Contact</a>
       </nav>
 
@@ -27,6 +28,7 @@
 
     <nav class="mobile-menu" aria-label="Mobile navigation" hidden>
       <a href="#features">Features</a>
+      <a href="#how">How it works</a>
       <a href="#cta">Contact</a>
     </nav>
   </header>
@@ -34,12 +36,21 @@
   <main>
     <section class="hero">
       <div class="container hero__grid">
-        <div>
+        <div class="hero__copy">
           <p class="eyebrow">Local reviews &amp; visibility</p>
-          <h1>Improve your rating and get more customers</h1>
+          <h1>Turn reviews into trust and more customers</h1>
+
           <p class="lead">
-            Collect honest reviews, reply faster, and build trust online.
+            For local businesses, online rating is often the first impression.
+            This project shows a simple service that helps collect honest feedback,
+            reply faster, and improve reputation across map platforms.
           </p>
+
+          <ul class="bullets">
+            <li>Increase rating with more positive reviews</li>
+            <li>Handle negative feedback faster</li>
+            <li>Improve visibility in local search</li>
+          </ul>
 
           <div class="hero__actions">
             <a class="btn btn--primary" href="#cta">Get in touch</a>
@@ -58,25 +69,56 @@
     <section class="section" id="features">
       <div class="container">
         <h2>Features</h2>
+        <p class="lead">
+          The page focuses on three core actions: collecting reviews, replying to feedback, and tracking progress.
+        </p>
 
         <div class="grid">
           <article class="card">
-            <img src="img/Growth.png" alt="Growth" />
+            <div class="card__media">
+              <img src="img/Growth.png" alt="Growth" />
+            </div>
             <h3>Collect reviews</h3>
-            <p>Help customers leave feedback.</p>
+            <p>Make it easy for customers to leave feedback after a visit or order.</p>
           </article>
 
           <article class="card">
-            <img src="img/Retentions.png" alt="Retention" />
+            <div class="card__media">
+              <img src="img/Retentions.png" alt="Retention" />
+            </div>
             <h3>Reply faster</h3>
-            <p>React to negative reviews.</p>
+            <p>Respond to negative reviews quickly and show that you care about service quality.</p>
           </article>
 
           <article class="card">
-            <img src="img/Analytics.png" alt="Analytics" />
+            <div class="card__media">
+              <img src="img/Analytics.png" alt="Analytics" />
+            </div>
             <h3>Track progress</h3>
-            <p>See rating changes over time.</p>
+            <p>See rating dynamics and understand what changes improve customer satisfaction.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container how">
+        <div>
+          <h2>How it works</h2>
+          <p class="lead">
+            A simple flow: ask → collect → respond → improve.
+            No complex steps — just a clear process that supports daily operations.
+          </p>
+          <ol class="steps">
+            <li>Send a request for feedback to customers</li>
+            <li>Collect reviews and monitor new messages</li>
+            <li>Reply and solve issues quickly</li>
+            <li>Use analytics to improve service and reputation</li>
+          </ol>
+        </div>
+
+        <div class="how__media" aria-label="Conversation example">
+          <img src="img/conversation.png" alt="Conversation example on a phone" />
         </div>
       </div>
     </section>
@@ -85,7 +127,10 @@
       <div class="container cta">
         <div class="cta__copy">
           <h2>Contact us</h2>
-          <p class="lead">Leave your details — we will contact you soon.</p>
+          <p class="lead">
+            Leave your details — we will contact you soon.
+            This form includes simple client-side validation.
+          </p>
         </div>
 
         <form class="form" id="leadForm" novalidate>
