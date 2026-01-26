@@ -3,291 +3,113 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Revvy — Landing Demo</title>
-  <meta name="description" content="University project landing page (HTML/CSS/JS)." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/styles.css" />
+  <title>Local Reviews</title>
+  <meta name="description" content="University landing page about reviews and local reputation." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body id="top">
   <header class="topbar">
     <div class="container topbar__inner">
       <a class="brand" href="#top" aria-label="Homepage">
-        <img class="brand__logo" src="img/logorevvy.png" alt="Revvy logo" />
+        <img class="brand__logo" src="img/logorevvy.png" alt="Logo" />
       </a>
 
-      <nav class="nav" aria-label="Primary">
+      <nav class="nav" aria-label="Primary navigation">
         <a href="#features">Features</a>
-        <a href="#how">How it works</a>
-
-        <div class="nav-dd" data-dd>
-          <button class="nav-dd__btn" type="button" aria-haspopup="menu" aria-expanded="false">
-            Solutions <span class="nav-dd__icon" aria-hidden="true">≡</span>
-          </button>
-          <div class="nav-dd__menu" role="menu" aria-label="Solutions" hidden>
-            <a role="menuitem" href="#solutions">All solutions</a>
-            <a role="menuitem" href="#solutions-restaurants">Restaurants</a>
-            <a role="menuitem" href="#solutions-clinics">Clinics</a>
-            <a role="menuitem" href="#solutions-beauty">Beauty</a>
-            <a role="menuitem" href="#solutions-hotels">Hotels</a>
-            <a role="menuitem" href="#solutions-education">Education</a>
-            <a role="menuitem" href="#solutions-retail">Retail</a>
-          </div>
-        </div>
-
         <a href="#cta">Contact</a>
       </nav>
 
-      <div class="topbar__actions">
-        <a class="link" href="#cta">Log in</a>
-        <a class="btn btn--dark" href="#cta">Get in touch</a>
-
-        <button class="burger" type="button" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
 
-    <div class="mobile-menu" hidden>
+    <nav class="mobile-menu" aria-label="Mobile navigation" hidden>
       <a href="#features">Features</a>
-      <a href="#how">How it works</a>
-
-      <details class="mm-dd">
-        <summary>Solutions</summary>
-        <div class="mm-dd__links">
-          <a href="#solutions">All solutions</a>
-          <a href="#solutions-restaurants">Restaurants</a>
-          <a href="#solutions-clinics">Clinics</a>
-          <a href="#solutions-beauty">Beauty</a>
-          <a href="#solutions-hotels">Hotels</a>
-          <a href="#solutions-education">Education</a>
-          <a href="#solutions-retail">Retail</a>
-        </div>
-      </details>
-
       <a href="#cta">Contact</a>
-      <a href="#cta">Log in</a>
-    </div>
+    </nav>
   </header>
 
   <main>
     <section class="hero">
       <div class="container hero__grid">
-        <div class="hero__copy">
-          <p class="eyebrow">Local reputation &amp; SEO</p>
-          <h1>The best solution to boost your local SEO</h1>
-
+        <div>
+          <p class="eyebrow">Local reviews &amp; visibility</p>
+          <h1>Improve your rating and get more customers</h1>
           <p class="lead">
-            Collect more honest reviews, react to negative feedback, and grow your rating
-            across the platforms your customers actually use.
+            Collect honest reviews, reply faster, and build trust online.
           </p>
 
-          <div class="hero__buttons">
-            <a class="btn btn--primary" href="#cta">Book a meeting</a>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#cta">Get in touch</a>
             <button class="btn btn--ghost" type="button" id="watchDemoBtn" aria-haspopup="dialog">
               Watch a demo
             </button>
           </div>
-
-          <div class="logos" aria-label="Social proof logos">
-            <span>Google</span><span>Tripadvisor</span><span>Yelp</span><span>Facebook</span><span>2GIS</span>
-          </div>
         </div>
 
-        <div class="hero__media" aria-label="Illustration">
-          <img class="hero__img" src="img/main.map.w.rewies.png" alt="Map with reviews overlay" />
+        <div class="hero__media" aria-label="Preview image">
+          <img src="img/main.map.w.rewies.png" alt="Map preview with reviews" />
         </div>
       </div>
     </section>
 
-    <section class="features" id="features">
+    <section class="section" id="features">
       <div class="container">
-        <h2 class="center">Features</h2>
+        <h2>Features</h2>
 
-        <div class="feature-grid">
+        <div class="grid">
           <article class="card">
-            <div class="card__head">
-              <h3>Grow local rating</h3>
-              <a class="card__link" href="#cta">Read more →</a>
-            </div>
-            <p>Get more positive reviews and reply to everything faster.</p>
-            <div class="card__media">
-              <img src="img/Growth.png" alt="Chart showing growth" />
-            </div>
+            <img src="img/Growth.png" alt="Growth" />
+            <h3>Collect reviews</h3>
+            <p>Help customers leave feedback.</p>
           </article>
 
           <article class="card">
-            <div class="card__head">
-              <h3>Clients retention</h3>
-              <a class="card__link" href="#cta">Read more →</a>
-            </div>
-            <p>Build trust with regular feedback loops and service recovery.</p>
-            <div class="card__media">
-              <img src="img/Retentions.png" alt="Retention flow illustration" />
-            </div>
+            <img src="img/Retentions.png" alt="Retention" />
+            <h3>Reply faster</h3>
+            <p>React to negative reviews.</p>
+          </article>
+
+          <article class="card">
+            <img src="img/Analytics.png" alt="Analytics" />
+            <h3>Track progress</h3>
+            <p>See rating changes over time.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="how" id="how">
-      <div class="container how__wrap">
-        <div class="how__copy">
-          <h2>How we can grow your business</h2>
-
-          <div class="how__list" role="list">
-            <button class="pill is-active" type="button" data-step="1">
-              <span class="pill__icon" aria-hidden="true">📍</span>
-              <span><strong>Rating &amp; visibility</strong><em>Increase ranking on maps</em></span>
-            </button>
-
-            <button class="pill" type="button" data-step="2">
-              <span class="pill__icon" aria-hidden="true">💬</span>
-              <span><strong>Feedback recovery</strong><em>Catch negative reviews early</em></span>
-            </button>
-
-            <button class="pill" type="button" data-step="3">
-              <span class="pill__icon" aria-hidden="true">🔁</span>
-              <span><strong>Return customers</strong><em>Automations &amp; reminders</em></span>
-            </button>
-          </div>
-        </div>
-
-        <div class="how__media" aria-live="polite">
-          <img class="how__img" src="img/conversation.png" alt="Phone with chat bubbles" />
-          <div class="how__badge" id="howBadge">
-            <strong>Step 1:</strong> Improve rating visibility
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="analytics">
-      <div class="container analytics__grid">
-        <div class="analytics__copy">
-          <h2>Analytics</h2>
-          <p class="lead">See rating dynamics, response speed, and message performance.</p>
-          <a class="btn btn--ghost" href="#cta">Learn more</a>
-        </div>
-
-        <div class="analytics__media">
-          <img src="img/Analytics.png" alt="Analytics dashboard on a laptop" />
-        </div>
-      </div>
-    </section>
-
-    <section class="solutions" id="solutions">
-      <div class="container">
-        <h2 class="center">Solutions</h2>
-
-        <div class="solutions__grid">
-          <article class="mini" id="solutions-restaurants"><h3>Restaurants</h3><p>Increase rating and recover guests.</p></article>
-          <article class="mini" id="solutions-clinics"><h3>Clinics</h3><p>Collect feedback and respond easily.</p></article>
-          <article class="mini" id="solutions-beauty"><h3>Beauty</h3><p>Turn clients into reviews and reminders.</p></article>
-          <article class="mini" id="solutions-hotels"><h3>Hotels</h3><p>Improve visibility on travel platforms.</p></article>
-          <article class="mini" id="solutions-education"><h3>Education</h3><p>Build trust with communication.</p></article>
-          <article class="mini" id="solutions-retail"><h3>Retail</h3><p>Centralize reviews and keep profiles accurate.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta" id="cta">
-      <div class="container cta__box">
+    <section class="section" id="cta">
+      <div class="container cta">
         <div class="cta__copy">
-          <h2>Ready to elevate your reputation?</h2>
-          <p class="lead">Leave your details — we’ll contact you within 1 business day.</p>
-
-          <ul class="checks">
-            <li>Higher ratings on Google Maps</li>
-            <li>More new customers from local search</li>
-            <li>More returning customers via reminders</li>
-            <li>More revenue from better reputation</li>
-          </ul>
+          <h2>Contact us</h2>
+          <p class="lead">Leave your details — we will contact you soon.</p>
         </div>
 
         <form class="form" id="leadForm" novalidate>
           <label>
             <span>Name</span>
-            <input name="name" type="text" autocomplete="name" placeholder="Your name" required minlength="2" />
+            <input name="name" type="text" placeholder="Your name" required minlength="2" />
           </label>
 
           <label>
             <span>Email</span>
-            <input name="email" type="email" autocomplete="email" placeholder="name@email.com" required />
-          </label>
-
-          <label>
-            <span>Business type</span>
-            <select name="type" required>
-              <option value="" selected disabled>Select…</option>
-              <option>Restaurant</option>
-              <option>Clinic</option>
-              <option>Beauty</option>
-              <option>Hotel</option>
-              <option>Other</option>
-            </select>
-          </label>
-
-          <label class="checkbox">
-            <input type="checkbox" name="privacy" required />
-            <span>I agree to the privacy policy (demo)</span>
+            <input name="email" type="email" placeholder="name@email.com" required />
           </label>
 
           <button class="btn btn--dark btn--full" type="submit">Submit</button>
-          <p class="form__hint" id="formHint" role="status" aria-live="polite"></p>
+          <p class="hint" id="formHint" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__grid">
-      <div class="footer__brand">
-        <div class="brand brand--footer">
-          <img class="brand__logo" src="img/logorevvy.png" alt="Revvy logo" />
-        </div>
-        <p>University project landing page (HTML/CSS/JS).</p>
-      </div>
-
-      <div class="footer__cols">
-        <div class="footer__col">
-          <h4>Product</h4>
-          <a href="#features">Features</a>
-          <a href="#solutions">Solutions</a>
-          <a href="#cta">Pricing</a>
-        </div>
-        <div class="footer__col">
-          <h4>Company</h4>
-          <a href="#how">About</a>
-          <a href="#cta">Contacts</a>
-          <a href="#">Privacy</a>
-        </div>
-        <div class="footer__col">
-          <h4>Resources</h4>
-          <a href="#">Docs</a>
-          <a href="#">Support</a>
-          <a href="#">Status</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer__bottom">
-      <div class="container footer__bottom-inner">
-        <span>© <span id="year"></span> Demo</span>
-        <a href="#top">Back to top ↑</a>
-      </div>
-    </div>
-  </footer>
-
   <div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Cookie consent">
     <div class="cookie__text">
       <strong>Cookies</strong>
-      <span>We use cookies-like storage to remember your choices on this demo page.</span>
+      <span>We use cookies-like storage to remember your choice.</span>
     </div>
     <div class="cookie__actions">
       <button class="btn btn--ghost" type="button" id="cookieDecline">Decline</button>
@@ -296,9 +118,9 @@
   </div>
 
   <dialog class="modal" id="demoModal" aria-label="Demo video">
-    <div class="modal__header">
+    <div class="modal__head">
       <strong>Quick demo</strong>
-      <button class="icon-btn" type="button" data-close aria-label="Close">✕</button>
+      <button class="icon-btn" type="button" id="closeModalBtn" aria-label="Close">✕</button>
     </div>
     <div class="modal__body">
       <div class="video">
@@ -308,10 +130,10 @@
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
       </div>
-      <p class="muted">Tip: using the nocookie domain to show you understand privacy basics.</p>
+      <p class="muted">Using “nocookie” for better privacy.</p>
     </div>
   </dialog>
 
-  <script src="js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
