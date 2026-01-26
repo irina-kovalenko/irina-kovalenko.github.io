@@ -100,12 +100,12 @@ p{ margin:0; color:var(--muted); }
 .card p{ font-size:14px; }
 
 .icon{
-  width:90px;
-  height:90px;
+  width:120px;
+  height:120px;
   object-fit:contain;
   border:1px solid var(--line);
-  border-radius:18px;
-  padding:14x;
+  border-radius:21px;
+  padding:17x;
   background:rgba(15,23,42,.03);
 }
 
