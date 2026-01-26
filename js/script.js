@@ -1,27 +1,27 @@
-// ===== Mobile menu =====
+// Mobile menu
 const burger = document.querySelector(".burger");
-const mobileMenu = document.querySelector(".mobile-menu");
+const menu = document.querySelector(".menu");
 
-if (burger && mobileMenu) {
+if (burger && menu) {
   burger.addEventListener("click", () => {
-    const isOpen = burger.getAttribute("aria-expanded") === "true";
-    burger.setAttribute("aria-expanded", String(!isOpen));
-    mobileMenu.hidden = isOpen;
+    const open = burger.getAttribute("aria-expanded") === "true";
+    burger.setAttribute("aria-expanded", String(!open));
+    menu.hidden = open;
   });
 
-  mobileMenu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
+  menu.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => {
       burger.setAttribute("aria-expanded", "false");
-      mobileMenu.hidden = true;
+      menu.hidden = true;
     });
   });
 }
 
-// ===== Form validation =====
+// Form validation
 const form = document.getElementById("leadForm");
 const hint = document.getElementById("formHint");
 
-function setHint(text, ok) {
+function showHint(text, ok) {
   if (!hint) return;
   hint.textContent = text;
   hint.style.color = ok ? "rgba(15,23,42,.75)" : "#b42318";
@@ -30,25 +30,23 @@ function setHint(text, ok) {
 if (form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-
     const name = form.elements.name.value.trim();
     const email = form.elements.email.value.trim();
 
-    if (name.length < 2) return setHint("Please enter your name.", false);
-    if (!email.includes("@") || !email.includes(".")) return setHint("Please enter a valid email.", false);
+    if (name.length < 2) return showHint("Please enter your name.", false);
+    if (!email.includes("@") || !email.includes(".")) return showHint("Please enter a valid email.", false);
 
-    setHint("Thanks! We will contact you soon. ✅", true);
+    showHint("Thanks! We will contact you soon. ✅", true);
     form.reset();
   });
 }
 
-// ===== Cookie consent (localStorage) =====
+// Cookies (localStorage)
 const cookie = document.getElementById("cookie");
 const KEY = "cookie_consent_exam";
 
 if (cookie) {
-  const saved = localStorage.getItem(KEY);
-  if (saved) cookie.hidden = true;
+  if (localStorage.getItem(KEY)) cookie.hidden = true;
 
   document.getElementById("cookieAccept")?.addEventListener("click", () => {
     localStorage.setItem(KEY, "accepted");
@@ -61,34 +59,20 @@ if (cookie) {
   });
 }
 
-// ===== Video modal =====
+// Video modal
 const modal = document.getElementById("demoModal");
-const watchBtn = document.getElementById("watchDemoBtn");
-const closeBtn = document.getElementById("closeModalBtn");
+const watch = document.getElementById("watchDemoBtn");
+const close = document.getElementById("closeModalBtn");
 
-if (watchBtn && modal) {
-  watchBtn.addEventListener("click", () => {
-    if (typeof modal.showModal === "function") modal.showModal();
-  });
-}
+watch?.addEventListener("click", () => modal?.showModal?.());
+close?.addEventListener("click", () => modal?.close());
 
-if (closeBtn && modal) {
-  closeBtn.addEventListener("click", () => modal.close());
-}
+modal?.addEventListener("click", (e) => {
+  const r = modal.getBoundingClientRect();
+  const inside = r.top <= e.clientY && e.clientY <= r.bottom && r.left <= e.clientX && e.clientX <= r.right;
+  if (!inside) modal.close();
+});
 
-if (modal) {
-  modal.addEventListener("click", (e) => {
-    const rect = modal.getBoundingClientRect();
-    const inside =
-      rect.top <= e.clientY &&
-      e.clientY <= rect.top + rect.height &&
-      rect.left <= e.clientX &&
-      e.clientX <= rect.left + rect.width;
-
-    if (!inside) modal.close();
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") modal.close();
-  });
-}
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") modal?.close();
+});
