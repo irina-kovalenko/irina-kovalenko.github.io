@@ -4,18 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Local Reviews</title>
-  <meta name="description" content="University landing page about reviews and local reputation." />
+  <meta name="description" content="Landing page about reviews and local reputation." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body id="top">
+<body>
   <header class="topbar">
-    <div class="container topbar__inner">
-      <a class="brand" href="#top" aria-label="Homepage">Local Reviews</a>
+    <div class="container bar">
+      <a class="brand" href="#">Local Reviews</a>
 
       <nav class="nav" aria-label="Primary navigation">
         <a href="#features">Features</a>
-        <a href="#how">How it works</a>
         <a href="#cta">Contact</a>
       </nav>
 
@@ -24,9 +23,8 @@
       </button>
     </div>
 
-    <nav class="mobile-menu" aria-label="Mobile navigation" hidden>
+    <nav class="menu" aria-label="Mobile navigation" hidden>
       <a href="#features">Features</a>
-      <a href="#how">How it works</a>
       <a href="#cta">Contact</a>
     </nav>
   </header>
@@ -35,31 +33,21 @@
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__copy">
-          <p class="eyebrow">Local reviews &amp; visibility</p>
+          <p class="tag">Local reviews &amp; visibility</p>
           <h1>Turn reviews into trust and more customers</h1>
-
           <p class="lead">
-            Online rating is often the first impression for a local business.
-            This project presents a simple service idea: collect honest feedback, reply faster,
-            and improve visibility on map platforms.
+            Online rating is often the first impression. This project shows a simple service idea:
+            collect honest feedback, reply faster, and improve local visibility.
           </p>
 
-          <ul class="bullets">
-            <li>More reviews → stronger trust</li>
-            <li>Faster replies to negative feedback</li>
-            <li>Better local visibility</li>
-          </ul>
-
           <div class="actions">
-            <a class="btn btn--primary" href="#cta">Get in touch</a>
-            <button class="btn btn--ghost" type="button" id="watchDemoBtn" aria-haspopup="dialog">
-              Watch a demo
-            </button>
+            <a class="btn primary" href="#cta">Get in touch</a>
+            <button class="btn ghost" type="button" id="watchDemoBtn" aria-haspopup="dialog">Watch demo</button>
           </div>
         </div>
 
-        <div class="panel">
-          <img src="img/main.map.w.rewies.png" alt="Map preview with reviews" />
+        <div class="box hero__media">
+          <img class="mock" src="img/main.map.w.rewies.png" alt="Map preview with reviews">
         </div>
       </div>
     </section>
@@ -67,23 +55,23 @@
     <section class="section" id="features">
       <div class="container">
         <h2>Features</h2>
-        <p class="lead">Three simple blocks: collect, reply, track.</p>
+        <p class="lead">Three core actions for a local business.</p>
 
         <div class="grid">
-          <article class="card">
-            <img class="card__img" src="img/Growth.png" alt="Growth" />
+          <article class="box card">
+            <img class="icon" src="img/Growth.png" alt="Growth">
             <h3>Collect reviews</h3>
             <p>Make it easy for customers to leave feedback.</p>
           </article>
 
-          <article class="card">
-            <img class="card__img" src="img/Retentions.png" alt="Retention" />
+          <article class="box card">
+            <img class="icon" src="img/Retentions.png" alt="Retention">
             <h3>Reply faster</h3>
             <p>React to negative reviews and solve issues.</p>
           </article>
 
-          <article class="card">
-            <img class="card__img" src="img/Analytics.png" alt="Analytics" />
+          <article class="box card">
+            <img class="icon" src="img/Analytics.png" alt="Analytics">
             <h3>Track progress</h3>
             <p>See rating changes over time.</p>
           </article>
@@ -91,72 +79,46 @@
       </div>
     </section>
 
-    <section class="section" id="how">
-      <div class="container how">
-        <div class="how__copy">
-          <h2>How it works</h2>
-          <p class="lead">
-            A clear flow: ask → collect → respond → improve.
-            This section explains the concept in simple steps.
-          </p>
-
-          <ol class="steps">
-            <li>Send a feedback request</li>
-            <li>Monitor new reviews</li>
-            <li>Reply and fix problems</li>
-            <li>Improve rating and visibility</li>
-          </ol>
-        </div>
-
-        <div class="panel">
-          <img src="img/conversation.png" alt="Conversation example" />
-        </div>
-      </div>
-    </section>
-
     <section class="section" id="cta">
       <div class="container cta">
-        <div class="cta__copy">
-          <h2>Contact us</h2>
-          <p class="lead">
-            Leave your details — we will contact you soon.
-            The form includes simple client-side validation.
-          </p>
+        <div>
+          <h2>Contact</h2>
+          <p class="lead">Leave your details — we will contact you soon.</p>
         </div>
 
-        <form class="form" id="leadForm" novalidate>
+        <form class="box form" id="leadForm" novalidate>
           <label class="field">
             <span>Name</span>
-            <input name="name" type="text" placeholder="Your name" required minlength="2" />
+            <input name="name" type="text" placeholder="Your name" required minlength="2">
           </label>
 
           <label class="field">
             <span>Email</span>
-            <input name="email" type="email" placeholder="name@email.com" required />
+            <input name="email" type="email" placeholder="name@email.com" required>
           </label>
 
-          <button class="btn btn--dark btn--full" type="submit">Submit</button>
+          <button class="btn dark full" type="submit">Submit</button>
           <p class="hint" id="formHint" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
   </main>
 
-  <div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <div class="cookie box" id="cookie" role="dialog" aria-label="Cookie consent">
     <div class="cookie__text">
       <strong>Cookies</strong>
-      <span>We use cookies-like storage to remember your choice.</span>
+      <span>We remember your choice (demo).</span>
     </div>
     <div class="cookie__actions">
-      <button class="btn btn--ghost" type="button" id="cookieDecline">Decline</button>
-      <button class="btn btn--primary" type="button" id="cookieAccept">Accept</button>
+      <button class="btn ghost" type="button" id="cookieDecline">Decline</button>
+      <button class="btn primary" type="button" id="cookieAccept">Accept</button>
     </div>
   </div>
 
   <dialog class="modal" id="demoModal" aria-label="Demo video">
     <div class="modal__head">
       <strong>Quick demo</strong>
-      <button class="icon-btn" type="button" id="closeModalBtn" aria-label="Close">✕</button>
+      <button class="x" type="button" id="closeModalBtn" aria-label="Close">✕</button>
     </div>
     <div class="modal__body">
       <div class="video">
@@ -166,7 +128,6 @@
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
       </div>
-      <p class="muted">Using “nocookie” for better privacy.</p>
     </div>
   </dialog>
 
