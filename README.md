@@ -29,10 +29,9 @@ No external frameworks or libraries were used.
 ## Key Features
 - Semantic HTML structure (`header`, `main`, `section`, `footer`)
 - Responsive layout using CSS Grid, Flexbox, and media queries
-- Desktop dropdown and mobile burger navigation
+- Mobile burger navigation
 - Modal video interaction
-- Interactive step-based section
-- Client-side form validation
+- Form validation
 - Cookie consent logic with persistent user choice
 - Fully responsive design for desktop, tablet, and mobile
 
