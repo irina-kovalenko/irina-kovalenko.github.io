@@ -4,206 +4,371 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Project Pitch — Revvy Landing Page</title>
-  <link rel="stylesheet" href="css/pitch.css" />
+
+  <style>
+    :root{
+      --bg:#070c14;
+      --card:rgba(255,255,255,.06);
+      --line:rgba(255,255,255,.14);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.72);
+      --muted2:rgba(255,255,255,.58);
+      --accent:#1f6fff;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 700px at 20% 20%, rgba(31,111,255,.22), transparent 55%),
+                  radial-gradient(900px 600px at 80% 30%, rgba(31,111,255,.12), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+    }
+
+    /* deck */
+    .deck{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px;
+    }
+    .slide{
+      width:min(1100px, 100%);
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border-radius:22px;
+      padding:34px;
+      box-shadow: 0 18px 70px rgba(0,0,0,.55);
+      margin:0 auto;
+    }
+
+    /* layout (image left, text right) */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap:28px;
+      align-items:center;
+    }
+    .media{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:10px;
+    }
+    .media img{
+      width:100%;
+      max-width:520px;
+      height:auto;
+      object-fit:contain;
+      display:block;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.14);
+    }
+
+    /* text */
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(31,111,255,.35);
+      background: rgba(31,111,255,.14);
+      color:#fff;
+      font-weight:700;
+      letter-spacing:.2px;
+      margin-bottom:14px;
+      width:fit-content;
+    }
+    h1{
+      margin:0 0 12px;
+      font-size:46px;
+      line-height:1.05;
+      letter-spacing:-.6px;
+    }
+    h2{
+      margin:0 0 10px;
+      font-size:34px;
+      line-height:1.1;
+      letter-spacing:-.4px;
+    }
+    .subtitle{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-weight:650;
+    }
+    p{margin:10px 0; color:var(--muted); font-size:18px; line-height:1.55}
+    .meta p{margin:6px 0; color:var(--muted2); font-size:16px}
+
+    /* cover */
+    .cover h1{font-size:52px}
+    .cover .subtitle{font-size:18px}
+    .cover .meta{margin-top:16px}
+    .two-col-meta{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px 26px;
+      margin-top:10px;
+    }
+    .two-col-meta p{margin:0}
+
+    /* responsive */
+    @media (max-width: 860px){
+      .slide{padding:26px}
+      .grid{grid-template-columns:1fr; gap:18px}
+      h1{font-size:40px}
+      h2{font-size:28px}
+      .two-col-meta{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 
 <body>
+
+  <!-- SLIDE 1 -->
   <main class="deck">
+    <section class="slide cover">
+      <div class="badge">Project Pitch</div>
 
-    <!-- SLIDE 1 (no image) -->
-    <section class="slide cover" id="s1">
-      <div class="content">
-        <p class="badge">Project Pitch</p>
-        <h1>Revvy — Local Reputation &amp; SEO Platform</h1>
-        <p class="subtitle">Responsive Landing Page · HTML · CSS · JavaScript</p>
+      <h1>Revvy — Local Reputation &amp; SEO Platform</h1>
+      <p class="subtitle">Responsive Landing Page · HTML · CSS · JavaScript</p>
 
-        <div class="meta">
-          <p><strong>Student</strong> Irina Kovalenko</p>
-          <p><strong>Matricola</strong> 69098A</p>
-          <p><strong>Degree Programme</strong> Comunicazione pubblica e d'impresa (per richiedenti visto)</p>
-          <p><strong>Code / Class</strong> B6Y — LM-59</p>
-          <p><strong>Academic Year</strong> 2025 / 2026</p>
+      <div class="two-col-meta meta">
+        <p><strong>Student</strong> Irina Kovalenko</p>
+        <p><strong>Matricola</strong> 69098A</p>
+        <p><strong>Degree Programme</strong> Comunicazione pubblica e d'impresa (per richiedenti visto)</p>
+        <p><strong>Code / Class</strong> B6Y — LM-59</p>
+        <p><strong>Academic Year</strong> 2025 / 2026</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- SLIDE 2 -->
+  <main class="deck">
+    <section class="slide">
+      <div class="grid">
+        <div class="media">
+          <img src="imgnew/2slide.png" alt="Slide image">
+        </div>
+        <div class="content">
+          <div class="badge">Project Goal</div>
+          <h2>Project Goal</h2>
+          <p>
+            The goal of this project was to design and implement a responsive simple landing page using HTML, CSS and JavaScript,
+            following modern UI/UX and accessibility principles.
+          </p>
+          <p>
+            The landing page simulates a real digital product and focuses on clear communication, usability, and lead generation.
+          </p>
         </div>
       </div>
     </section>
-
-    <!-- SLIDE 2 -->
-    <section class="slide" id="s2">
-      <div class="media">
-        <img src="imgnew/2slide.png" alt="Project Goal infographic">
-      </div>
-      <div class="content">
-        <h2>Project Goal</h2>
-        <p>
-          The goal of this project was to design and implement a responsive simple landing page using HTML, CSS and JavaScript,
-          following modern UI/UX and accessibility principles.
-        </p>
-        <p>
-          The landing page simulates a real digital product and focuses on clear communication, usability, and lead generation.
-        </p>
-      </div>
-    </section>
-
-    <!-- SLIDE 3 -->
-    <section class="slide" id="s3">
-      <div class="media">
-        <img src="imgnew/3slide.png" alt="Why Local Reputation & SEO infographic">
-      </div>
-      <div class="content">
-        <h2>Why Local Reputation &amp; SEO</h2>
-        <p>Local businesses strongly depend on:</p>
-        <ul>
-          <li>online reviews</li>
-          <li>visibility on maps and platforms</li>
-          <li>customer feedback</li>
-        </ul>
-        <p>
-          A strong online reputation helps businesses attract new customers, build trust, and increase revenue.
-          This landing page communicates these benefits clearly and supports business growth.
-        </p>
-      </div>
-    </section>
-
-    <!-- SLIDE 4 -->
-    <section class="slide" id="s4">
-      <div class="media">
-        <img src="imgnew/4slide.png" alt="Technology Stack & Code Organization infographic">
-      </div>
-      <div class="content">
-        <h2>Technology Stack &amp; Code Organization</h2>
-        <p>This project was developed using standard web technologies commonly adopted for modern static websites.</p>
-        <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>GitHub Pages (deployment)</li>
-        </ul>
-        <p>
-          Organization: HTML for structure, CSS for styling, JavaScript for behavior — improving maintainability and readability.
-        </p>
-      </div>
-    </section>
-
-    <!-- SLIDE 5 -->
-    <section class="slide" id="s5">
-      <div class="media">
-        <img src="imgnew/5slide.png" alt="Semantic HTML Structure infographic">
-      </div>
-      <div class="content">
-        <h2>Semantic HTML Structure</h2>
-        <p>
-          The page is built with semantic elements such as <strong>header</strong>, <strong>nav</strong>, <strong>main</strong>,
-          <strong>section</strong>, and <strong>footer</strong>.
-        </p>
-        <p>
-          This improves readability, accessibility (screen readers), and SEO, because the role of each section is clear.
-        </p>
-      </div>
-    </section>
-
-    <!-- SLIDE 6 -->
-    <section class="slide" id="s6">
-      <div class="media">
-        <img src="imgnew/6slide.png" alt="Responsive layout infographic">
-      </div>
-      <div class="content">
-        <h2>Responsive Layout</h2>
-        <p>The layout adapts to different screen sizes using:</p>
-        <ul>
-          <li>CSS Grid</li>
-          <li>Flexbox</li>
-          <li>media queries</li>
-        </ul>
-        <p>
-          Navigation and content are optimized for desktop, tablet, and mobile devices.
-        </p>
-      </div>
-    </section>
-
-    <!-- SLIDE 7 -->
-    <section class="slide" id="s7">
-      <div class="media">
-        <img src="imgnew/7slide.png" alt="Anchor buttons infographic">
-      </div>
-      <div class="content">
-        <h2>Anchor Navigation (CTA Buttons)</h2>
-        <p>
-          The main buttons and navigation links use anchors (e.g. <strong>#features</strong>, <strong>#cta</strong>)
-          to move users to the right section instantly.
-        </p>
-        <p>
-          This supports clarity and conversion: users reach key information with one click.
-        </p>
-      </div>
-    </section>
-
-    <!-- SLIDE 8 -->
-    <section class="slide" id="s8">
-      <div class="media">
-        <img src="imgnew/8slide.png" alt="Lead form infographic">
-      </div>
-      <div class="content">
-        <h2>Lead Form &amp; Validation</h2>
-        <p>
-          The landing page includes a contact form to capture leads.
-          Basic client-side validation helps users submit correct data (required fields, email format).
-        </p>
-        <p>
-          A small message area provides immediate feedback after submission.
-        </p>
-      </div>
-    </section>
-
-    <!-- SLIDE 9 -->
-    <section class="slide" id="s9">
-      <div class="media">
-        <img src="imgnew/9slide.png" alt="Cookie consent infographic">
-      </div>
-      <div class="content">
-        <h2>Cookie Consent (Demo)</h2>
-        <p>
-          The site shows a cookie consent banner and stores the user’s choice locally,
-          so the banner does not appear again on the next visit.
-        </p>
-        <p>
-          This simulates a common European website pattern and improves user experience.
-        </p>
-      </div>
-    </section>
-
-    <!-- SLIDE 10 (NEW) -->
-    <section class="slide" id="s10">
-      <div class="media">
-        <img src="imgnew/10slide.png" alt="Mobile burger menu infographic">
-      </div>
-      <div class="content">
-        <h2>Mobile Burger Menu</h2>
-        <p>
-          On smaller screens, the navigation switches to a burger menu to save space and keep the interface clean.
-        </p>
-        <p>
-          The menu opens and closes with a button, and navigation links remain accessible and easy to tap on mobile.
-        </p>
-      </div>
-    </section>
-
-    <!-- SLIDE 11 -->
-    <section class="slide" id="s11">
-      <div class="media">
-        <img src="imgnew/11slide.png" alt="Demo video modal infographic">
-      </div>
-      <div class="content">
-        <h2>Demo Video in a Modal</h2>
-        <p>
-          The “Watch demo” button opens a modal window with an embedded video.
-          This keeps users on the page while providing product context.
-        </p>
-        <p>
-          The modal supports accessibility: clear close action and focus-friendly structure.
-        </p>
-      </div>
-    </section>
-
   </main>
+
+  <!-- SLIDE 3 -->
+  <main class="deck">
+    <section class="slide">
+      <div class="grid">
+        <div class="media">
+          <img src="imgnew/3slide.png" alt="Slide image">
+        </div>
+        <div class="content">
+          <div class="badge">Context</div>
+          <h2>Why Local Reputation &amp; SEO</h2>
+          <p>Local businesses strongly depend on:</p>
+          <p>• online reviews<br>• visibility on maps and platforms<br>• customer feedback</p>
+          <p>
+            A strong online reputation helps businesses attract new customers, build trust, and increase revenue.
+            This project shows how a landing page can communicate these benefits clearly and support business growth.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SLIDE 4 -->
+  <main class="deck">
+    <section class="slide">
+      <div class="grid">
+        <div class="media">
+          <img src="imgnew/4slide.png" alt="Slide image">
+        </div>
+        <div class="content">
+          <div class="badge">Stack</div>
+          <h2>Technology Stack &amp; Code Organization</h2>
+          <p>This project was developed using standard web technologies commonly adopted for modern static websites.</p>
+          <p><strong>Technologies used:</strong><br>• HTML<br>• CSS<br>• JavaScript<br>• GitHub Pages</p>
+          <p>
+            <strong>Organization:</strong> HTML for structure, CSS for styling, JavaScript for behavior — improving maintainability and readability.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SLIDE 5 -->
+  <main class="deck">
+    <section class="slide">
+      <div class="grid">
+        <div class="media">
+          <img src="imgnew/5slide.png" alt="Slide image">
+        </div>
+        <div class="content">
+          <div class="badge">HTML</div>
+          <h2>Semantic HTML Structure</h2>
+          <p>
+            The page uses semantic tags to keep structure clear and accessible:
+            <strong>&lt;header&gt;</strong> for navigation,
+            <strong>&lt;main&gt;</strong> for primary content,
+            and <strong>&lt;section&gt;</strong> blocks for each page area.
+          </p>
+          <p>
+            This improves readability, supports screen readers, and makes future edits easier.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SLIDE 6 -->
+  <main class="deck">
+    <section class="slide">
+      <div class="grid">
+        <div class="media">
+          <img src="imgnew/6slide.png" alt="Slide image">
+        </div>
+        <div class="content">
+          <div class="badge">Responsive</div>
+          <h2>Responsive Layout</h2>
+          <p>The layout adapts to different screen sizes using:</p>
+          <p>• CSS Grid<br>• Flexbox<br>• media queries</p>
+          <p>
+            Navigation and content are optimized for desktop, tablet, and mobile devices.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SLIDE 7 -->
+  <main class="deck">
+    <section class="slide">
+      <div class="grid">
+        <div class="media">
+          <img src="imgnew/7slide.png" alt="Slide image">
+        </div>
+        <div class="content">
+          <div class="badge">UI</div>
+          <h2>Anchors &amp; Primary Buttons</h2>
+          <p>
+            The main CTA buttons navigate users to key sections (Features / Contact) using anchor links.
+            This supports a simple, familiar landing-page flow and helps users reach the form faster.
+          </p>
+          <p>
+            Buttons are designed with clear contrast and large tap targets for mobile usability.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SLIDE 8 -->
+  <main class="deck">
+    <section class="slide">
+      <div class="grid">
+        <div class="media">
+          <img src="imgnew/8slide.png" alt="Slide image">
+        </div>
+        <div class="content">
+          <div class="badge">Cookies</div>
+          <h2>Cookie Consent Banner</h2>
+          <p>
+            A cookie banner is implemented to demonstrate consent UX and basic front-end interaction.
+            The user can accept or decline, and the choice is remembered (demo behavior).
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SLIDE 9 -->
+  <main class="deck">
+    <section class="slide">
+      <div class="grid">
+        <div class="media">
+          <img src="imgnew/9slide.png" alt="Slide image">
+        </div>
+        <div class="content">
+          <div class="badge">Mobile</div>
+          <h2>Mobile Burger Menu</h2>
+          <p>
+            On small screens, navigation switches to a burger menu for better readability and space usage.
+            The menu opens and closes with a clear button and improves usability for mobile visitors.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SLIDE 10 -->
+  <main class="deck">
+    <section class="slide">
+      <div class="grid">
+        <div class="media">
+          <img src="imgnew/10slide.png" alt="Slide image">
+        </div>
+        <div class="content">
+          <div class="badge">Form</div>
+          <h2>Contact Form</h2>
+          <p>
+            The contact form includes required fields and client-side validation to reduce errors.
+            This supports lead generation and keeps the interaction simple and clear.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SLIDE 11 -->
+  <main class="deck">
+    <section class="slide">
+      <div class="grid">
+        <div class="media">
+          <img src="imgnew/11slide.png" alt="Slide image">
+        </div>
+        <div class="content">
+          <div class="badge">Modal</div>
+          <h2>Demo Video (Modal)</h2>
+          <p>
+            A “Watch demo” button opens a modal window with an embedded video.
+            This keeps users on the page while offering a quick product explanation.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SLIDE 12 -->
+  <main class="deck">
+    <section class="slide">
+      <div class="grid">
+        <div class="media">
+          <img src="imgnew/12slide.png" alt="Slide image">
+        </div>
+        <div class="content">
+          <div class="badge">Deployment</div>
+          <h2>Deployment on GitHub Pages</h2>
+          <p>
+            The project is deployed as a static website with GitHub Pages.
+            This makes the landing page accessible via a public link and easy to share for evaluation.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
 </body>
 </html>
