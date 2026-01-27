@@ -12,7 +12,7 @@
       --line:rgba(255,255,255,.14);
       --text:rgba(255,255,255,.92);
       --muted:rgba(255,255,255,.72);
-      --muted2:rgba(255,255,255,.58);
+      --muted2:rgba(255,255,255,.60);
       --accent:#1f6fff;
     }
     *{box-sizing:border-box}
@@ -20,20 +20,27 @@
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 700px at 20% 20%, rgba(31,111,255,.22), transparent 55%),
-                  radial-gradient(900px 600px at 80% 30%, rgba(31,111,255,.12), transparent 55%),
-                  var(--bg);
+      background:
+        radial-gradient(1200px 700px at 20% 20%, rgba(31,111,255,.22), transparent 55%),
+        radial-gradient(900px 600px at 80% 30%, rgba(31,111,255,.12), transparent 55%),
+        var(--bg);
       color:var(--text);
     }
 
-    /* deck */
+    /* Each slide is one screen, scroll to move */
     .deck{
       min-height:100vh;
       display:flex;
       align-items:center;
       justify-content:center;
       padding:28px;
+      scroll-snap-align:start;
     }
+    body{
+      scroll-snap-type:y mandatory;
+      overflow-y:auto;
+    }
+
     .slide{
       width:min(1100px, 100%);
       border:1px solid var(--line);
@@ -41,16 +48,16 @@
       border-radius:22px;
       padding:34px;
       box-shadow: 0 18px 70px rgba(0,0,0,.55);
-      margin:0 auto;
     }
 
-    /* layout (image left, text right) */
+    /* default layout: image left, text right */
     .grid{
       display:grid;
       grid-template-columns: 1fr 1.15fr;
       gap:28px;
       align-items:center;
     }
+
     .media{
       display:flex;
       justify-content:center;
@@ -59,7 +66,7 @@
     }
     .media img{
       width:100%;
-      max-width:520px;
+      max-width:520px;     /* keeps images from becoming gigantic on big screens */
       height:auto;
       object-fit:contain;
       display:block;
@@ -68,7 +75,6 @@
       background: rgba(0,0,0,.14);
     }
 
-    /* text */
     .badge{
       display:inline-flex;
       align-items:center;
@@ -80,9 +86,10 @@
       color:#fff;
       font-weight:700;
       letter-spacing:.2px;
-      margin-bottom:14px;
+      margin:0 0 14px;
       width:fit-content;
     }
+
     h1{
       margin:0 0 12px;
       font-size:46px;
@@ -90,47 +97,87 @@
       letter-spacing:-.6px;
     }
     h2{
-      margin:0 0 10px;
+      margin:0 0 12px;
       font-size:34px;
-      line-height:1.1;
+      line-height:1.12;
       letter-spacing:-.4px;
     }
     .subtitle{
       margin:0 0 16px;
       color:var(--muted);
       font-weight:650;
+      font-size:18px;
+      line-height:1.4;
     }
-    p{margin:10px 0; color:var(--muted); font-size:18px; line-height:1.55}
-    .meta p{margin:6px 0; color:var(--muted2); font-size:16px}
 
-    /* cover */
-    .cover h1{font-size:52px}
-    .cover .subtitle{font-size:18px}
-    .cover .meta{margin-top:16px}
+    p{
+      margin:10px 0;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.55;
+    }
+    ul{
+      margin:8px 0 8px 18px;
+      padding:0;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.55;
+    }
+    li{ margin:6px 0; }
+
+    .meta p{
+      margin:6px 0;
+      color:var(--muted2);
+      font-size:16px;
+      line-height:1.45;
+    }
+
+    .codebox{
+      margin-top:12px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background: rgba(0,0,0,.22);
+      overflow:auto;
+    }
+    pre{
+      margin:0;
+      padding:12px 14px;
+      font-size:13px;
+      line-height:1.35;
+      color: rgba(255,255,255,.88);
+      white-space:pre;
+    }
+
+    /* Cover slide (no image) */
+    .cover .grid{ grid-template-columns:1fr; }
+    .cover h1{ font-size:52px; }
     .two-col-meta{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:10px 26px;
       margin-top:10px;
     }
-    .two-col-meta p{margin:0}
+    .two-col-meta p{ margin:0; }
 
-    /* responsive */
+    /* Text-only slide (no image) */
+    .textonly .grid{ grid-template-columns:1fr; }
+
     @media (max-width: 860px){
-      .slide{padding:26px}
-      .grid{grid-template-columns:1fr; gap:18px}
-      h1{font-size:40px}
-      h2{font-size:28px}
-      .two-col-meta{grid-template-columns:1fr}
+      .slide{ padding:26px; }
+      .grid{ grid-template-columns:1fr; gap:18px; }
+      .two-col-meta{ grid-template-columns:1fr; }
+      h1{ font-size:40px; }
+      h2{ font-size:28px; }
+      .media img{ max-width: 520px; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- SLIDE 1 -->
+  <!-- 1) Cover (no image) -->
   <main class="deck">
-    <section class="slide cover">
+    <section class="slide cover" id="s1">
       <div class="badge">Project Pitch</div>
 
       <h1>Revvy — Local Reputation &amp; SEO Platform</h1>
@@ -146,163 +193,159 @@
     </section>
   </main>
 
-  <!-- SLIDE 2 -->
+  <!-- 2) Project Goal (2slide) -->
   <main class="deck">
-    <section class="slide">
+    <section class="slide" id="s2">
       <div class="grid">
         <div class="media">
-          <img src="imgnew/2slide.png" alt="Slide image">
+          <img src="imgnew/2slide.png" alt="Project goal infographic">
         </div>
         <div class="content">
-          <div class="badge">Project Goal</div>
           <h2>Project Goal</h2>
           <p>
-            The goal of this project was to design and implement a responsive simple landing page using HTML, CSS and JavaScript,
+            The goal of this project was to design and implement a responsive landing page using HTML, CSS and JavaScript,
             following modern UI/UX and accessibility principles.
           </p>
           <p>
-            The landing page simulates a real digital product and focuses on clear communication, usability, and lead generation.
+            The landing page simulates a real digital product and focuses on clear communication, usability,
+            and lead generation through online reputation management.
           </p>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- SLIDE 3 -->
+  <!-- 3) Why Local Reputation & SEO (3slide) -->
   <main class="deck">
-    <section class="slide">
+    <section class="slide" id="s3">
       <div class="grid">
         <div class="media">
-          <img src="imgnew/3slide.png" alt="Slide image">
+          <img src="imgnew/3slide.png" alt="Why local reputation infographic">
         </div>
         <div class="content">
-          <div class="badge">Context</div>
           <h2>Why Local Reputation &amp; SEO</h2>
           <p>Local businesses strongly depend on:</p>
-          <p>• online reviews<br>• visibility on maps and platforms<br>• customer feedback</p>
+          <ul>
+            <li>online reviews</li>
+            <li>visibility on maps and platforms</li>
+            <li>customer feedback</li>
+          </ul>
           <p>
             A strong online reputation helps businesses attract new customers, build trust, and increase revenue.
-            This project shows how a landing page can communicate these benefits clearly and support business growth.
+            This landing page communicates these benefits clearly and supports business growth.
           </p>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- SLIDE 4 -->
+  <!-- 4) Tech Stack (4slide) -->
   <main class="deck">
-    <section class="slide">
+    <section class="slide" id="s4">
       <div class="grid">
         <div class="media">
-          <img src="imgnew/4slide.png" alt="Slide image">
+          <img src="imgnew/4slide.png" alt="Technology stack infographic">
         </div>
         <div class="content">
-          <div class="badge">Stack</div>
           <h2>Technology Stack &amp; Code Organization</h2>
-          <p>This project was developed using standard web technologies commonly adopted for modern static websites.</p>
-          <p><strong>Technologies used:</strong><br>• HTML<br>• CSS<br>• JavaScript<br>• GitHub Pages</p>
           <p>
-            <strong>Organization:</strong> HTML for structure, CSS for styling, JavaScript for behavior — improving maintainability and readability.
+            This project was developed using standard web technologies commonly adopted for modern static websites.
+          </p>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>GitHub Pages</li>
+          </ul>
+          <p>
+            Organization: HTML for structure, CSS for styling, JavaScript for behavior — improving maintainability and readability.
           </p>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- SLIDE 5 -->
+  <!-- 5) Semantic HTML (5slide) -->
   <main class="deck">
-    <section class="slide">
+    <section class="slide" id="s5">
       <div class="grid">
         <div class="media">
-          <img src="imgnew/5slide.png" alt="Slide image">
+          <img src="imgnew/5slide.png" alt="Semantic HTML infographic">
         </div>
         <div class="content">
-          <div class="badge">HTML</div>
           <h2>Semantic HTML Structure</h2>
           <p>
-            The page uses semantic tags to keep structure clear and accessible:
-            <strong>&lt;header&gt;</strong> for navigation,
-            <strong>&lt;main&gt;</strong> for primary content,
-            and <strong>&lt;section&gt;</strong> blocks for each page area.
+            The website uses semantic HTML to improve accessibility, readability, and content hierarchy.
+            Clear elements define the role of each page section.
           </p>
-          <p>
-            This improves readability, supports screen readers, and makes future edits easier.
-          </p>
+
+          <div class="codebox">
+<pre><code>&lt;header&gt;...&lt;/header&gt;
+&lt;nav&gt;...&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id="features"&gt;...&lt;/section&gt;
+  &lt;section id="cta"&gt;...&lt;/section&gt;
+&lt;/main&gt;</code></pre>
+          </div>
+
+          <p>This structure helps both users and assistive technologies understand the page.</p>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- SLIDE 6 -->
+  <!-- 6) Responsive Layout (12slide) -->
   <main class="deck">
-    <section class="slide">
+    <section class="slide" id="s6">
       <div class="grid">
         <div class="media">
-          <img src="imgnew/6slide.png" alt="Slide image">
+          <img src="imgnew/12slide.png" alt="Responsive layout infographic">
         </div>
         <div class="content">
-          <div class="badge">Responsive</div>
           <h2>Responsive Layout</h2>
           <p>The layout adapts to different screen sizes using:</p>
-          <p>• CSS Grid<br>• Flexbox<br>• media queries</p>
-          <p>
-            Navigation and content are optimized for desktop, tablet, and mobile devices.
-          </p>
+          <ul>
+            <li>CSS Grid</li>
+            <li>Flexbox</li>
+            <li>media queries</li>
+          </ul>
+          <p>Navigation and content are optimized for desktop, tablet, and mobile devices.</p>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- SLIDE 7 -->
+  <!-- 7) Navigation & Anchor Links (6slide) -->
   <main class="deck">
-    <section class="slide">
+    <section class="slide" id="s7">
       <div class="grid">
         <div class="media">
-          <img src="imgnew/7slide.png" alt="Slide image">
+          <img src="imgnew/6slide.png" alt="Navigation and anchors infographic">
         </div>
         <div class="content">
-          <div class="badge">UI</div>
-          <h2>Anchors &amp; Primary Buttons</h2>
+          <h2>Navigation &amp; Anchor Links</h2>
           <p>
-            The main CTA buttons navigate users to key sections (Features / Contact) using anchor links.
-            This supports a simple, familiar landing-page flow and helps users reach the form faster.
+            The main navigation uses anchor links to move between sections without reloading the page.
+            It improves usability and helps users find key blocks quickly.
           </p>
-          <p>
-            Buttons are designed with clear contrast and large tap targets for mobile usability.
-          </p>
+
+          <div class="codebox">
+<pre><code>&lt;a href="#features"&gt;Features&lt;/a&gt;
+&lt;a href="#cta"&gt;Contact&lt;/a&gt;</code></pre>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- SLIDE 8 -->
+  <!-- 8) Mobile Burger Menu (10slide) -->
   <main class="deck">
-    <section class="slide">
+    <section class="slide" id="s8">
       <div class="grid">
         <div class="media">
-          <img src="imgnew/8slide.png" alt="Slide image">
+          <img src="imgnew/10slide.png" alt="Mobile burger menu infographic">
         </div>
         <div class="content">
-          <div class="badge">Cookies</div>
-          <h2>Cookie Consent Banner</h2>
-          <p>
-            A cookie banner is implemented to demonstrate consent UX and basic front-end interaction.
-            The user can accept or decline, and the choice is remembered (demo behavior).
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- SLIDE 9 -->
-  <main class="deck">
-    <section class="slide">
-      <div class="grid">
-        <div class="media">
-          <img src="imgnew/9slide.png" alt="Slide image">
-        </div>
-        <div class="content">
-          <div class="badge">Mobile</div>
           <h2>Mobile Burger Menu</h2>
           <p>
             On small screens, navigation switches to a burger menu for better readability and space usage.
@@ -313,58 +356,121 @@
     </section>
   </main>
 
-  <!-- SLIDE 10 -->
+  <!-- 9) Call-to-Action Buttons (7slide) -->
   <main class="deck">
-    <section class="slide">
+    <section class="slide" id="s9">
       <div class="grid">
         <div class="media">
-          <img src="imgnew/10slide.png" alt="Slide image">
+          <img src="imgnew/7slide.png" alt="CTA buttons infographic">
         </div>
         <div class="content">
-          <div class="badge">Form</div>
-          <h2>Contact Form</h2>
+          <h2>Call-to-Action Buttons</h2>
           <p>
-            The contact form includes required fields and client-side validation to reduce errors.
-            This supports lead generation and keeps the interaction simple and clear.
+            Call-to-action buttons guide the user to the main actions: contacting the business and watching a demo.
+            They support clear user flow and lead generation.
           </p>
+
+          <div class="codebox">
+<pre><code>&lt;a class="btn primary" href="#cta"&gt;Get in touch&lt;/a&gt;
+&lt;button class="btn ghost" id="watchDemoBtn"&gt;Watch demo&lt;/button&gt;</code></pre>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- SLIDE 11 -->
+  <!-- 10) Contact Form & Validation (8slide) -->
   <main class="deck">
-    <section class="slide">
+    <section class="slide" id="s10">
       <div class="grid">
         <div class="media">
-          <img src="imgnew/11slide.png" alt="Slide image">
+          <img src="imgnew/8slide.png" alt="Contact form infographic">
         </div>
         <div class="content">
-          <div class="badge">Modal</div>
-          <h2>Demo Video (Modal)</h2>
+          <h2>Contact Form &amp; Validation</h2>
           <p>
-            A “Watch demo” button opens a modal window with an embedded video.
-            This keeps users on the page while offering a quick product explanation.
+            The form collects user details and provides immediate feedback.
+            JavaScript checks inputs and prevents empty or incorrect submissions.
           </p>
+
+          <div class="codebox">
+<pre><code>form.addEventListener("submit", (e) =&gt; {
+  e.preventDefault();
+  // validate name + email
+});</code></pre>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
- <!-- SLIDE 12 -->
-<main class="deck">
-  <section class="slide">
-    <div class="content">
-      <div class="badge">Deployment</div>
-      <h2>Deployment on GitHub Pages</h2>
-      <p>
-        The project is deployed as a static website with GitHub Pages.
-        This makes the landing page accessible via a public link and easy to share for evaluation.
-      </p>
-    </div>
-  </section>
-</main>
+  <!-- 11) Cookie Consent (9slide) -->
+  <main class="deck">
+    <section class="slide" id="s11">
+      <div class="grid">
+        <div class="media">
+          <img src="imgnew/9slide.png" alt="Cookie consent infographic">
+        </div>
+        <div class="content">
+          <h2>Cookie Consent</h2>
+          <p>
+            A cookie banner is implemented with a simple logic: once the user chooses Accept or Decline,
+            the choice is saved and the banner does not appear again.
+          </p>
 
+          <div class="codebox">
+<pre><code>localStorage.setItem("cookie_consent", "accepted");
+cookie.hidden = true;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 12) Modal Window (11slide) -->
+  <main class="deck">
+    <section class="slide" id="s12">
+      <div class="grid">
+        <div class="media">
+          <img src="imgnew/11slide.png" alt="Video demo modal infographic">
+        </div>
+        <div class="content">
+          <h2>Modal Window (Video Demo)</h2>
+          <p>
+            A modal window displays a short demo video without leaving the page.
+            JavaScript controls opening and closing for a smooth user experience.
+          </p>
+
+          <div class="codebox">
+<pre><code>watchBtn.addEventListener("click", () =&gt; modal.showModal());
+closeBtn.addEventListener("click", () =&gt; modal.close());</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 13) JavaScript Overview (no image) -->
+  <main class="deck">
+    <section class="slide textonly" id="s13">
+      <div class="grid">
+        <div class="content">
+          <h2>JavaScript Overview</h2>
+          <p>JavaScript is used to add interactivity without external libraries:</p>
+          <ul>
+            <li>mobile menu toggle</li>
+            <li>anchor-based navigation support</li>
+            <li>form validation and user feedback</li>
+            <li>cookie consent logic (localStorage)</li>
+            <li>modal window for the demo video</li>
+          </ul>
+          <p>
+            This keeps the code simple, readable, and easy to explain line by line.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
 
 </body>
 </html>
